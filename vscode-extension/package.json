@@ -1,0 +1,74 @@
+{
+  "name": "markuml-vscode",
+  "displayName": "MarkUML Preview",
+  "description": "Live SVG preview for MarkUML diagrams in Markdown (```uml / ```markuml) and standalone .markuml / .uml files.",
+  "version": "1.0.1",
+  "publisher": "LeandroGCruzP",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeandroGCruzP/markuml"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown",
+    "onLanguage:markuml"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "markdown.markdownItPlugins": true,
+    "languages": [
+      {
+        "id": "markuml",
+        "aliases": [
+          "MarkUML",
+          "markuml"
+        ],
+        "extensions": [
+          ".markuml",
+          ".uml"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "markuml",
+        "scopeName": "source.markuml",
+        "path": "./syntaxes/markuml.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "markuml.openPreviewToSide",
+        "title": "MarkUML: Open Preview to the Side",
+        "icon": "$(open-preview)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "markuml.openPreviewToSide",
+          "when": "editorLangId == markuml",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "markuml.openPreviewToSide",
+        "key": "cmd+k v",
+        "mac": "cmd+k v",
+        "win": "ctrl+k v",
+        "linux": "ctrl+k v",
+        "when": "editorLangId == markuml"
+      }
+    ]
+  }
+}

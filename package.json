@@ -1,0 +1,42 @@
+{
+  "name": "markuml",
+  "version": "1.0.0",
+  "description": "Generate clean SVG UML diagrams (sequence, class, flow) from a simple Markdown-like syntax. Zero dependencies, works in Node.js and the browser.",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "bin": {
+    "markuml": "./bin/markuml.js"
+  },
+  "files": [
+    "src",
+    "types",
+    "bin",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "uml",
+    "markdown",
+    "diagram",
+    "svg",
+    "sequence-diagram",
+    "class-diagram",
+    "flowchart",
+    "zero-dependency"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
